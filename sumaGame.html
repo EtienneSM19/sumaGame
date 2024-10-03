@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Juego de la suma</title>
+        <meta charset="utf-8">
+        <style>
+            input[type=text]{
+                width: 40px;
+            }
+
+            #sol{
+                background-color: gray;
+            }
+
+            #winOrlose{
+                font-size:100px;
+            }
+            
+            #points{
+                font-size: 40px;
+                color: blue;
+            }
+            h1 {
+                font-style: italic;
+                color: darkviolet;
+                font-size: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <h1>Juego de la Suma</h1>
+            <p id="game" hidden><input type="text" id="num1" disabled> + <input type="text" id="num2" disabled> = <input type="text" id="result" readonly>
+            <br><br>Solucion <input type="text" id="sol" readonly>
+            </p>
+            <p id="enter">
+                Selecciona la dificultad<br><select id="dificult">
+                    <option value="easy">Facil</option>
+                    <option value="mid">Medio</option>
+                    <option value="dif">Dificil</option>
+                </select><br><br>
+                <input type="button" onClick="selectDificultad()" value="Empezar">
+            </p>
+            <p id="control" hidden><input type="button" onClick="prepare()" id="start" value="Reintentar" disabled> <input type="button" onClick="game()" id="play" value="Jugar"> 
+            <input type="button" onClick="prepare()" id="next" value="Siguiente" disabled> <input type="button" onClick="closer()" id="cerrar" value="Terminar"></p>
+            <p id="console">
+                <div id="winOrlose"></div>
+                <div id="points"></div>
+            </p>
+        </form>
+        <script src="sumGame.js"></script>
+    </body>
+</html>
