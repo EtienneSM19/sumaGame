@@ -38,14 +38,18 @@
                 -Facil (Del 1 al 50)<br>
                 -Medio (Del 1 al 100)<br>
                 -Dificil (del 1 al 150)<br>
-                <p>
-                <select id="dificult">
+                
+                <!-- <select id="dificult">
                     <option value="easy">Facil</option>
                     <option value="mid">Medio</option>
                     <option value="dif">Dificil</option>
-                </select><br><br>
+                </select><br><br> -->
+                <form id="difficulty">
+                <label>Fácil<input type="radio" name="difficulty" id="easy"></label>
+                <label>Medio<input type="radio" name="difficulty" id="medium"></label>
+                <label>Dificil<input type="radio" name="difficulty" id="difficult"></label>
+            </form>
                 <input type="button" onClick="selectDificultad()" value="Empezar">
-            </p>
             </p>
             <p id="control" hidden><input type="button" onClick="prepare()" id="start" value="Reintentar" disabled> <input type="button" onClick="game()" id="play" value="Jugar"> 
             <input type="button" onClick="prepare()" id="next" value="Siguiente" disabled> <input type="button" onClick="closer()" id="cerrar" value="Terminar"></p>

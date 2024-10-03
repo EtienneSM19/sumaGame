@@ -1,8 +1,8 @@
 let dificultad = 0;
 let score = 0;
 function selectDificultad(){
-    let seleccion = document.getElementById("dificult").options[document.getElementById("dificult").selectedIndex].value;
-    if(seleccion=="easy"){
+    let seleccion = document.getElementById("difficulty").options[document.getElementById("dificultty").selectedIndex].value;
+    if(isset=="easy"){
         dificultad=50;
     }
     else if(seleccion=="mid"){
@@ -33,7 +33,6 @@ function prepare(){
     document.getElementById("points").innerHTML="Resultado: " + score;
     document.getElementById("winOrlose").setAttribute("hidden", "hidden");
     document.getElementById("points").removeAttribute("hidden");
-    document.getElementById("leyenda").setAttribute("hidden", "hidden");
 }
 
 function game(){
