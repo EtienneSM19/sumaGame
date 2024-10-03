@@ -33,6 +33,7 @@ function prepare(){
     document.getElementById("points").innerHTML="Resultado: " + score;
     document.getElementById("winOrlose").setAttribute("hidden", "hidden");
     document.getElementById("points").removeAttribute("hidden");
+    document.getElementById("leyenda").setAttribute("hidden", "hidden");
 }
 
 function game(){
