@@ -1,14 +1,13 @@
 let dificultad = 0;
 let score = 0;
 function selectDificultad(){
-    let seleccion = document.getElementById("difficulty").options[document.getElementById("dificultty").selectedIndex].value;
-    if(isset=="easy"){
+    if(document.getElementById("easy").checked){
         dificultad=50;
     }
-    else if(seleccion=="mid"){
+    else if(document.getElementById("medium").checked){
         dificultad=100;
     }
-    else if(seleccion=="dif"){
+    else if(document.getElementById("difficult").checked){
         dificultad=150;
     }
     document.getElementById("enter").setAttribute("hidden", "hidden");
