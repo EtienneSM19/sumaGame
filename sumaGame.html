@@ -30,20 +30,25 @@
     <body>
         <form>
             <h1>Juego de la Suma</h1>
+            <h2 id="difSelected"></h2>
+            <hr>
             <p id="game" hidden><input type="text" id="num1" disabled> + <input type="text" id="num2" disabled> = <input type="text" id="result" readonly>
             <br><br>Solucion <input type="text" id="sol" readonly>
             </p>
+            <hr id="gameLine" hidden>
             <p id="enter">
                 Selecciona la dificultad<br>
                 -Facil (Del 1 al 50)<br>
                 -Medio (Del 1 al 100)<br>
                 -Dificil (del 1 al 150)<br>
-                
+                <br>
                 <label>Fácil<input type="radio" name="difficulty" id="easy"></label>
                 <label>Medio<input type="radio" name="difficulty" id="medium"></label>
-                <label>Dificil<input type="radio" name="difficulty" id="difficult"></label><br>
+                <label>Dificil<input type="radio" name="difficulty" id="difficult"></label>
+                <label>Muy Dificil<input type="radio" name="difficulty" id="veryDifficult"></label><br><br>
                 <input type="button" onClick="selectDificultad()" value="Empezar">
             </p>
+            <hr id="enterLine">
             <p id="control" hidden><input type="button" onClick="prepare()" id="start" value="Reintentar" disabled> <input type="button" onClick="game()" id="play" value="Jugar"> 
             <input type="button" onClick="prepare()" id="next" value="Siguiente" disabled> <input type="button" onClick="closer()" id="cerrar" value="Terminar"></p>
             <p id="console">

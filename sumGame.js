@@ -3,15 +3,23 @@ let score = 0;
 function selectDificultad(){
     if(document.getElementById("easy").checked){
         dificultad=50;
+        document.getElementById("difSelected").innerHTML="Facil";
     }
     else if(document.getElementById("medium").checked){
         dificultad=100;
+        document.getElementById("difSelected").innerHTML="Medio";
     }
     else if(document.getElementById("difficult").checked){
         dificultad=150;
+        document.getElementById("difSelected").innerHTML="Dificil";
+    }
+    else if(document.getElementById("veryDifficult").checked){
+        dificultad=300;
+        document.getElementById("difSelected").innerHTML="Muy Dificil";
     }
     document.getElementById("enter").setAttribute("hidden", "hidden");
     prepare();
+
 }
 
 function prepare(){
@@ -29,15 +37,18 @@ function prepare(){
     document.getElementById("result").value="";
     document.getElementById("result").removeAttribute("readonly");
     document.getElementById("console").innerHTML="";
-    document.getElementById("points").innerHTML="Resultado: " + score;
+    document.getElementById("points").innerHTML="Puntuación: " + score;
     document.getElementById("winOrlose").setAttribute("hidden", "hidden");
     document.getElementById("points").removeAttribute("hidden");
+    document.getElementById("difSelected").removeAttribute("hidden");
+    document.getElementById("gameLine").removeAttribute("hidden");
+    document.getElementById("enterLine").setAttribute("hidden", "hidden");
 }
 
 function game(){
-    let resultado = parseInt(document.getElementById("result").value);
+    let Puntuación = parseInt(document.getElementById("result").value);
     let solucion = parseInt(document.getElementById("num1").value) + parseInt(document.getElementById("num2").value);
-    if (resultado==solucion){
+    if (Puntuación==solucion){
         score++;
         document.getElementById("sol").value=solucion;
         document.getElementById("sol").style.backgroundColor = "lightgreen";
@@ -47,7 +58,7 @@ function game(){
         document.getElementById("winOrlose").removeAttribute("hidden");
         document.getElementById("winOrlose").innerHTML="Correcto";
         document.getElementById("winOrlose").style.color="green";
-        document.getElementById("points").innerHTML="Resultado: " + score;
+        document.getElementById("points").innerHTML="Puntuación: " + score;
     }
     else {
         document.getElementById("sol").value=solucion;
@@ -55,6 +66,7 @@ function game(){
         document.getElementById("winOrlose").removeAttribute("hidden");
         document.getElementById("winOrlose").innerHTML="Perdiste";
         document.getElementById("winOrlose").style.color = "red";
+        document.getElementById("points").innerHTML="Puntuación final: " + score;
         score=0;
         restart();
     }
@@ -71,5 +83,8 @@ function closer(){
     document.getElementById("enter").removeAttribute("hidden");
     document.getElementById("winOrlose").setAttribute("hidden", "hidden");
     document.getElementById("points").setAttribute("hidden", "hidden");
+    document.getElementById("difSelected").setAttribute("hidden", "hidden");
+    document.getElementById("enterLine").removeAttribute("hidden");
+    document.getElementById("gameLine").setAttribute("hidden", "hidden");
     score=0;
 }
