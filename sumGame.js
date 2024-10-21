@@ -1,6 +1,6 @@
 let dificultad = 0;
 let score = 0;
-function selectDificultad(){
+function selectDificult(){
     if(document.getElementById("easy").checked){
         dificultad=50;
         document.getElementById("difSelected").innerHTML="Facil";
